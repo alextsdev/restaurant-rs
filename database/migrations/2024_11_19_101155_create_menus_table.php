@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 8, 2);
-            $table->enum('category', ['starter', 'main', 'dessert', 'drink'])->default('main');
+            $table->enum('category', ['breakfast', 'main', 'dinner'])->default('main');
             $table->boolean('available')->default(true);
             $table->timestamps();
         });

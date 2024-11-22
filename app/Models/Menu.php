@@ -13,8 +13,8 @@ class Menu extends Model
         'name', 'description', 'price', 'category', 'available'
     ];
 
-    public function orderItems()
+    public function products()
     {
-        return $this->hasMany(OrderItem::class);
+        return $this->belongsToMany(Product::class, 'menu_product');
     }
 }

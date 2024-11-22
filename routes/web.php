@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('users', ProfileController::class)->middleware('auth');
+Route::resource('reservations', ReservationController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

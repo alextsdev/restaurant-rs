@@ -19,14 +19,9 @@ class Order extends Model
         return $this->belongsTo(Reservation::class);
     }
 
-    public function orderItems()
+    public function products()
     {
-        return $this->hasMany(OrderItem::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(Product::class, 'order_product');
     }
 
     public function table()

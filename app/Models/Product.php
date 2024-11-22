@@ -13,8 +13,9 @@ class Product extends Model
         'name', 'description', 'price', 'category', 'available'
     ];
 
-    public function orderItems()
+    public function menus()
     {
-        return $this->hasMany(OrderItem::class);
+        return $this->belongsToMany(Menu::class, 'menu_product');
     }
+
 }
